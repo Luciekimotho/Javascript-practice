@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1 id = "header">Old heading</h1>
+        <h1 id = "id1">My heading 1</h1>
+        <p id="time"></p>
+
+
+
+        <button type="button" onclick="document.getElementById('id1').style.color = 'red'">
+Click me!</button>
+
+        <h1 onclick="this.innerHTML = 'Oooops!'">Click on this text!</h1>
+
+        <button onclick="displayDate()">The time is</button>
+        <button id="time2">The time(2) is:</button>
+        <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#d94a38; width:120px; height:20px; padding:40px;">Mouse over me</div>
+
+        <script>
+            var element = document.getElementById("header");
+            element.innerHTML = "New Header";
+
+            function displayDate(){
+            document.getElementById("time").innerHTML = Date();
+            }
+
+            document.getElementById("time2").onclick = displayDate;
+
+            function mOver(obj){
+                obj.style.backgroundColor = '#1ec5e5';
+                obj.innerHTML = "Thanks!";
+            }
+            function mOut(obj){
+                obj.innerHTML = "Mouse over me";
+            }
+        </script>
+
+    </body>
+</html>
